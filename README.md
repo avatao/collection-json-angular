@@ -5,7 +5,8 @@ Collection+JSON Angular Implementation
 Disclaimer
 ---
 
-This project is under development (pre-alpha state), use it with care.
+This project is under development (alpha state), use it with care.
+Many methods are not implemented, the library is not yet functional.
 
 How to develop
 ---

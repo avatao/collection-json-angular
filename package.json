@@ -1,13 +1,12 @@
 {
   "name": "collection-json.angular",
-  "version": "0.0.1-alpha.1",
+  "version": "1.0.0-alpha.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
-  "dependencies": {
-    "collection-json.ts": "^1.0.0-alpha.1"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "npm run tsc",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
@@ -20,10 +19,17 @@
     "typescript"
   ],
   "author": "Avatao",
-  "contributors" : ["Balazs Rostas <balazs.rostas@avatao.com>"],
+  "contributors": [
+    "Balazs Rostas <balazs.rostas@avatao.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/avatao/collection-json.angular/issues"
   },
   "homepage": "https://github.com/avatao/collection-json.angular#readme"
+  "dependencies": {},
+  "devDependencies": {
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.4"
+  }
 }
