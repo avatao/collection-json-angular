@@ -26,8 +26,7 @@
   "bugs": {
     "url": "https://github.com/avatao/collection-json.angular/issues"
   },
-  "homepage": "https://github.com/avatao/collection-json.angular#readme"
-  "dependencies": {},
+  "homepage": "https://github.com/avatao/collection-json.angular#readme",
   "devDependencies": {
     "tslint": "^5.4.3",
     "typescript": "^2.3.4"
