@@ -1,0 +1,29 @@
+{
+  "name": "collection-json.angular",
+  "version": "0.0.1-alpha.1",
+  "description": "Implementation of the collection-json.ts library for Angular",
+  "dependencies": {
+    "collection-json.ts": "^1.0.0-alpha.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avatao/collection-json.angular.git"
+  },
+  "keywords": [
+    "collection-json.angular",
+    "collection-json",
+    "angular",
+    "typescript"
+  ],
+  "author": "Avatao",
+  "contributors" : ["Balazs Rostas <balazs.rostas@avatao.com>"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avatao/collection-json.angular/issues"
+  },
+  "homepage": "https://github.com/avatao/collection-json.angular#readme"
+}
