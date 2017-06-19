@@ -5,9 +5,9 @@ import {
     LinkJSON,
     QueryJSON,
     TemplateJSON,
-} from 'collection-json.ts/lib/interfaces';
+} from 'collection-json.ts/dist/interfaces';
 
-import {CollectionBase, LinkStore, QueryStore} from 'collection-json.ts/lib/models';
+import {CollectionBase, LinkStore, QueryStore} from 'collection-json.ts/dist/models';
 
 import {AngularError} from './error';
 import {AngularItem} from './item';

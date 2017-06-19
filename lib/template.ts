@@ -1,5 +1,5 @@
-import {Collection, TemplateJSON} from 'collection-json.ts/lib/interfaces';
-import {TemplateBase} from 'collection-json.ts/lib/models';
+import {Collection, TemplateJSON} from 'collection-json.ts/dist/interfaces';
+import {TemplateBase} from 'collection-json.ts/dist/models';
 import {AngularCollection} from './collection';
 
 export class AngularTemplate extends TemplateBase {

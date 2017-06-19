@@ -1,5 +1,5 @@
-import {Collection, QueryJSON} from 'collection-json.ts/lib/interfaces';
-import {QueryBase} from 'collection-json.ts/lib/models';
+import {Collection, QueryJSON} from 'collection-json.ts/dist/interfaces';
+import {QueryBase} from 'collection-json.ts/dist/models';
 import {AngularCollection} from './collection';
 
 export class AngularQuery extends QueryBase{

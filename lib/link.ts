@@ -1,5 +1,5 @@
-import {Collection, LinkJSON} from 'collection-json.ts/lib/interfaces';
-import {LinkBase} from 'collection-json.ts/lib/models';
+import {Collection, LinkJSON} from 'collection-json.ts/dist/interfaces';
+import {LinkBase} from 'collection-json.ts/dist/models';
 import {AngularCollection} from './collection';
 
 export class AngularLink extends LinkBase{

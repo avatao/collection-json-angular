@@ -1,5 +1,5 @@
-import {ItemJSON, LinkJSON} from 'collection-json.ts/lib/interfaces';
-import {ItemBase, LinkStore} from 'collection-json.ts/lib/models';
+import {ItemJSON, LinkJSON} from 'collection-json.ts/dist/interfaces';
+import {ItemBase, LinkStore} from 'collection-json.ts/dist/models';
 import {AngularLink} from './link';
 
 export class AngularItem extends ItemBase {
