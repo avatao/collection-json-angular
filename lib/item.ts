@@ -1,5 +1,6 @@
 import {ItemJSON, LinkJSON} from 'collection-json.ts/lib/interfaces';
-import {ItemBase} from 'collection-json.ts/lib/models';
+import {ItemBase, LinkStore} from 'collection-json.ts/lib/models';
+import {AngularLink} from './link';
 
 export class AngularItem extends ItemBase {
 
@@ -8,7 +9,11 @@ export class AngularItem extends ItemBase {
     }
 
     protected parseLinks(links: LinkJSON[]): void {
-        throw new Error('Method not implemented.');
+
+        this.links = new LinkStore();
+
+        for (const link of links)
+            this.links.add(new AngularLink(link));
     }
 
 }
