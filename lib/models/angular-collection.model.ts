@@ -14,10 +14,16 @@ import {AngularItem} from './angular-item.model';
 import {AngularLink} from './angular-link.model';
 import {AngularQuery} from './angular-query.model';
 import {AngularTemplate} from './angular-template.model';
+import {Http} from '@angular/http';
 
 export class AngularCollection extends CollectionBase {
 
+    public static httpService: Http;
+
     constructor(collection: CollectionJSON) {
+        if (typeof AngularCollection.httpService === 'undefined') {
+            throw new Error('Please configure the HTTP service -> AngularCollection.httpService')
+        }
         super(collection);
     }
 
