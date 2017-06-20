@@ -1,3 +1,9 @@
+1.0.0-alpha.3 / 2017-06-20
+==================
+
+* First published version
+* Library is INCOMPLETE and will not work properly with angular yet
+
 1.0.0-alpha.2 / 2017-06-20
 ==================
 

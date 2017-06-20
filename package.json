@@ -1,6 +1,6 @@
 {
   "name": "collection-json-angular",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
@@ -12,7 +12,6 @@
     "pack": "npm run build && npm run copy && cd dist && npm pack",
     "upload": "npm run build && npm run copy && cd dist && npm publish"
   },
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/avatao/collection-json-angular.git"
