@@ -5,15 +5,15 @@ import {
     LinkJSON,
     QueryJSON,
     TemplateJSON,
-} from 'collection-json.ts/lib/interfaces';
+} from 'collection-json-base/interfaces';
 
-import {CollectionBase, LinkStore, QueryStore} from 'collection-json.ts/lib/models';
+import {CollectionBase, LinkStore, QueryStore} from 'collection-json-base/models';
 
-import {AngularError} from './error';
-import {AngularItem} from './item';
-import {AngularLink} from './link';
-import {AngularQuery} from './query';
-import {AngularTemplate} from './template';
+import {AngularError} from './angular-error.model';
+import {AngularItem} from './angular-item.model';
+import {AngularLink} from './angular-link.model';
+import {AngularQuery} from './angular-query.model';
+import {AngularTemplate} from './angular-template.model';
 
 export class AngularCollection extends CollectionBase {
 
@@ -25,23 +25,26 @@ export class AngularCollection extends CollectionBase {
 
         this.links = new LinkStore();
 
-        for (const link of links)
-            this.links.add(new AngularLink(link));
+        for (const link of links) {
+          this.links.add(new AngularLink(link));
+        }
     }
 
     protected parseItems(items: ItemJSON[]): void {
 
         this.items = [];
 
-        for (const item of items)
-            this.items.push(new AngularItem(item));
+        for (const item of items) {
+          this.items.push(new AngularItem(item));
+        }
     }
 
     protected parseQueries(queries: QueryJSON[]): void {
         this.queries = new QueryStore();
 
-        for (const query of queries)
-            this.queries.add(new AngularQuery(query));
+        for (const query of queries) {
+          this.queries.add(new AngularQuery(query));
+        }
     }
 
     protected parseTemplate(template: TemplateJSON): void {

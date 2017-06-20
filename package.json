@@ -1,19 +1,24 @@
 {
-  "name": "collection-json.angular",
-  "version": "1.0.0-alpha.1",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "name": "collection-json-angular",
+  "version": "1.0.0-alpha.2",
+  "main": "index.js",
+  "types": "index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
   "scripts": {
-    "prepublish": "npm run tsc",
-    "tsc": "tsc"
+    "clean": "rimraf ./dist",
+    "copy": "copyfiles package.json README.md LICENSE dist",
+    "tsc": "tsc",
+    "build": "npm run clean && npm run tsc",
+    "pack": "npm run build && npm run copy && cd dist && npm pack",
+    "upload": "npm run build && npm run copy && cd dist && npm publish"
   },
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/avatao/collection-json.angular.git"
+    "url": "git+https://github.com/avatao/collection-json-angular.git"
   },
   "keywords": [
-    "collection-json.angular",
+    "collection-json-angular",
     "collection-json",
     "angular",
     "typescript"
@@ -24,11 +29,30 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/avatao/collection-json.angular/issues"
+    "url": "https://github.com/avatao/collection-json-angular/issues"
   },
-  "homepage": "https://github.com/avatao/collection-json.angular#readme",
+  "homepage": "https://github.com/avatao/collection-json-angular#readme",
   "devDependencies": {
+    "copyfiles": "^1.2.0",
+    "rimraf": "^2.6.1",
     "tslint": "^5.4.3",
-    "typescript": "^2.3.4"
+    "typescript": "~2.3.3"
+  },
+  "dependencies": {
+    "@angular/common": "^4.2.3",
+    "@angular/core": "^4.2.3",
+    "@angular/http": "^4.2.3",
+    "@angular/platform-browser": "^4.2.3",
+    "collection-json-base": "^1.0.0-alpha.5",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  },
+  "peerDependencies": {
+    "@angular/common": "^4.2.3",
+    "@angular/core": "^4.2.3",
+    "@angular/http": "^4.2.3",
+    "@angular/platform-browser": "^4.2.3",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
   }
 }
