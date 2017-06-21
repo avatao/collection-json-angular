@@ -13,19 +13,26 @@ export class AngularQuery extends QueryBase {
         super(query);
     }
 
-    public send(): Observable<Collection> {
+    public send(params: { name: string, value: string | number | boolean }[] = []): Observable<Collection> {
         const requestOptions = new RequestOptions();
-        const params = new URLSearchParams();
+        const urlParams = new URLSearchParams();
 
         if (typeof this.dataStore !== 'undefined') {
+
+            if (params.length !== 0) {
+                for (const param of params) {
+                    this.dataStore.data(param.name).value = param.value;
+                }
+            }
+
             for (const data of this.dataStore) {
                 if (typeof data.value !== 'undefined') {
-                    params.set(data.name, String(data.value));
+                    urlParams.set(data.name, String(data.value));
                 }
             }
         }
 
-        requestOptions.params = params;
+        requestOptions.params = urlParams;
 
         return CollectionConfigurationManager.getHttpService<Http>().get(this.href, requestOptions)
             .map((result) => new AngularCollection(result.json().collection));
