@@ -1,8 +1,9 @@
 import {Collection, LinkJSON} from 'collection-json-base/interfaces';
-import {LinkBase} from 'collection-json-base/models';
+import {LinkBase, CollectionConfigurationManager} from 'collection-json-base/models';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import {Observable} from 'rxjs/Observable';
 import {AngularCollection} from './angular-collection.model';
 
 export class AngularLink extends LinkBase {
@@ -12,6 +13,8 @@ export class AngularLink extends LinkBase {
     }
 
     public follow(): Observable<Collection> {
-        return AngularCollection.httpService.get(this.href).map((response) => new AngularCollection(response.json().collection));
+        return CollectionConfigurationManager.getHttpService<Http>()
+            .get(this.href)
+            .map((response) => new AngularCollection(response.json().collection));
     }
 }
