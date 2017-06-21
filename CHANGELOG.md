@@ -1,3 +1,8 @@
+1.0.0-alpha.9 / 2017-06-21
+==================
+
+* Updated collection-json-base library
+
 1.0.0-alpha.8 / 2017-06-21
 ==================
 
