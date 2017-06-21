@@ -1,3 +1,8 @@
+1.0.0-alpha.6 / 2017-06-21
+==================
+
+* Using CollectionConfigurationManager to get the Http service
+
 1.0.0-alpha.5 / 2017-06-20
 ==================
 
