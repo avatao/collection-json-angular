@@ -1,3 +1,8 @@
+1.0.0-alpha.7 / 2017-06-21
+==================
+
+* Implemented AngularQuery's send method
+
 1.0.0-alpha.6 / 2017-06-21
 ==================
 
@@ -7,7 +12,6 @@
 ==================
 
 * README changes, republished on npm
-
 
 1.0.0-alpha.3 / 2017-06-20
 ==================
