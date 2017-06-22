@@ -1,3 +1,10 @@
+1.0.0-alpha.10 / 2017-06-22
+==================
+
+* Updated collection-json-base library
+* Created AngularData class
+* Implemented AngularTemplate submit and update methods
+
 1.0.0-alpha.9 / 2017-06-21
 ==================
 
