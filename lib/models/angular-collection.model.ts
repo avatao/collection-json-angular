@@ -48,7 +48,7 @@ export class AngularCollection extends CollectionBase {
     }
 
     protected parseTemplate(template: TemplateJSON): void {
-        this.template = new AngularTemplate(template);
+        this.template = new AngularTemplate(template, this.href);
     }
 
     protected parseError(error: ErrorJSON): void {
