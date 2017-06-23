@@ -15,16 +15,6 @@ export class AngularTemplate extends TemplateBase {
         this.href = href;
     }
 
-    public set(name: string, value: string | number | boolean ) {
-        this.dataStore.data(name).value = value;
-    }
-
-    public setAll(body: {name: string, value: string | number | boolean}[]) {
-        for (const item of body) {
-            this.set(item.name, item.value);
-        }
-    }
-
     public submit(): Observable<Collection> {
 
         if (typeof this.href === 'undefined') {
