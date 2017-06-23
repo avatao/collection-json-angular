@@ -1,3 +1,8 @@
+1.0.0-alpha.13 / 2017-06-23
+==================
+
+* Length validation checks against the string length
+
 1.0.0-alpha.12 / 2017-06-23
 ==================
 
