@@ -109,7 +109,7 @@ export class AngularTemplate extends TemplateBase {
                                 const upper_bound = Number(upper_bound_argument.value);
                                 const valueNumber = Number(data.value);
 
-                                if (!(valueNumber > lower_bound && valueNumber < upper_bound)) {
+                                if (!(valueNumber >= lower_bound && valueNumber <= upper_bound)) {
                                     wasError = true;
                                 }
                             }
@@ -137,7 +137,7 @@ export class AngularTemplate extends TemplateBase {
                                 const lower_bound = Number(lower_bound_argument.value);
                                 const upper_bound = Number(upper_bound_argument.value);
 
-                                if (!(fileSize > lower_bound && fileSize < upper_bound)) {
+                                if (!(fileSize >= lower_bound && fileSize <= upper_bound)) {
                                     wasError = true;
                                 }
                             }
