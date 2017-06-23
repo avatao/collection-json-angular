@@ -1,3 +1,9 @@
+1.0.0-alpha.11 / 2017-06-23
+==================
+
+* Updated collection-json-base library
+* Implemented Validation Array extension checks
+
 1.0.0-alpha.10 / 2017-06-22
 ==================
 
