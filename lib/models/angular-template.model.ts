@@ -58,7 +58,7 @@ export class AngularTemplate extends TemplateBase {
             if (typeof data.validations !== 'undefined') {
                 for (const validation of data.validations) {
 
-                    if (typeof validation.arguments === 'undefined') {
+                    if (typeof validation.arguments === 'undefined' && validation.name !== 'presence') {
                         continue;
                     }
 
@@ -133,7 +133,7 @@ export class AngularTemplate extends TemplateBase {
                             }
                             break;
                         case 'presence':
-                            if (typeof data.validations === 'undefined') {
+                            if (typeof data.value === 'undefined') {
                                 wasError = true;
                             }
                             break;
