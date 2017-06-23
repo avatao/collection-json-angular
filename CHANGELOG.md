@@ -1,3 +1,8 @@
+1.0.0-alpha.14 / 2017-06-23
+==================
+
+* Removed Template set and setAll methods (moved to base library)
+
 1.0.0-alpha.13 / 2017-06-23
 ==================
 

@@ -19,7 +19,7 @@ export class AngularTemplate extends TemplateBase {
         this.dataStore.data(name).value = value;
     }
 
-    public setAll(body: {name: string, value: string}[]) {
+    public setAll(body: {name: string, value: string | number | boolean}[]) {
         for (const item of body) {
             this.set(item.name, item.value);
         }

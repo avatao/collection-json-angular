@@ -63,9 +63,9 @@ chalk@^1.1.0:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-collection-json-base@^1.0.0-alpha.13:
-  version "1.0.0-alpha.13"
-  resolved "https://registry.yarnpkg.com/collection-json-base/-/collection-json-base-1.0.0-alpha.13.tgz#667f60487a3db485fd68d8e1355c1c51d8fe1690"
+collection-json-base@^1.0.0-alpha.14:
+  version "1.0.0-alpha.14"
+  resolved "https://registry.yarnpkg.com/collection-json-base/-/collection-json-base-1.0.0-alpha.14.tgz#1e7edcbd3bc36a32b85f26c77f3009eeebc6ceae"
   dependencies:
     rxjs "^5.1.0"
     valid-url "^1.0.9"
