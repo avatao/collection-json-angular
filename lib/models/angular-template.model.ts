@@ -57,25 +57,35 @@ export class AngularTemplate extends TemplateBase {
         for (const data of this.dataStore) {
             if (typeof data.validations !== 'undefined') {
                 for (const validation of data.validations) {
-
-                    if (typeof validation.arguments === 'undefined' && validation.name !== 'presence') {
-                        continue;
-                    }
-
                     switch (validation.name) {
                         case 'inclusion':
+
+                            if (typeof validation.arguments === 'undefined') {
+                                break;
+                            }
+
                             // Filter the arguments array where the value equals the current value, if empty error is thrown
                             if (typeof data.value !== 'undefined') {
                                 wasError = validation.arguments.filter(argument => argument.value === data.value).length === 0;
                             }
                             break;
                         case 'exclusion':
+
+                            if (typeof validation.arguments === 'undefined') {
+                                break;
+                            }
+
                             // Filter the arguments array where the value equals the current value, if not empty error is thrown
                             if (typeof data.value !== 'undefined') {
                                 wasError = validation.arguments.filter(argument => argument.value === data.value).length > 0;
                             }
                             break;
                         case 'format':
+
+                            if (typeof validation.arguments === 'undefined') {
+                                break;
+                            }
+
                             if (typeof data.value !== 'undefined') {
                                 const regexp_argument = validation.arguments.find(argument => argument.name === 'regex');
 
@@ -87,6 +97,11 @@ export class AngularTemplate extends TemplateBase {
                             }
                             break;
                         case 'length':
+
+                            if (typeof validation.arguments === 'undefined') {
+                                break;
+                            }
+
                             if (typeof data.value !== 'undefined') {
                                 const lower_bound_argument = validation.arguments.find(argument => argument.name === 'lower_bound');
                                 const upper_bound_argument = validation.arguments.find(argument => argument.name === 'upper_bound');
@@ -105,6 +120,11 @@ export class AngularTemplate extends TemplateBase {
                             }
                             break;
                         case 'file_type':
+
+                            if (typeof validation.arguments === 'undefined') {
+                                break;
+                            }
+
                             // Expecting value to be Data URI with mime types
                             if (typeof data.value !== 'undefined') {
                                 const fileType = (<string>data.value).split(';')[0].split(':')[1];
@@ -113,6 +133,11 @@ export class AngularTemplate extends TemplateBase {
                             }
                             break;
                         case 'file_size':
+
+                            if (typeof validation.arguments === 'undefined') {
+                                break;
+                            }
+
                             // Expecting value to be Data URI with mime types
                             if (typeof data.value !== 'undefined') {
                                 // Base64 encoding turns 6 bytes into 8, so we multiply by 3/4
