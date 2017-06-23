@@ -107,9 +107,9 @@ export class AngularTemplate extends TemplateBase {
 
                                 const lower_bound = Number(lower_bound_argument.value);
                                 const upper_bound = Number(upper_bound_argument.value);
-                                const valueNumber = Number(data.value);
+                                const valueLength = String(data.value).length;
 
-                                if (!(valueNumber >= lower_bound && valueNumber <= upper_bound)) {
+                                if (!(valueLength >= lower_bound && valueLength <= upper_bound)) {
                                     wasError = true;
                                 }
                             }
