@@ -3,7 +3,7 @@ import {DataJSON} from 'collection-json-base';
 
 export class AngularData extends DataBase {
 
-    constructor(error: DataJSON) {
-        super(error);
+    constructor(data: DataJSON) {
+        super(data);
     }
 }
