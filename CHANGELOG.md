@@ -1,8 +1,12 @@
+1.0.0-alpha.16 / 2017-06-23
+==================
+
+* Validation check moved to the base library
+
 1.0.0-alpha.15 / 2017-06-23
 ==================
 
 * Fixed presence check logic on validations
-
 
 1.0.0-alpha.14 / 2017-06-23
 ==================
