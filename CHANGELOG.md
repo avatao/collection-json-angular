@@ -1,3 +1,9 @@
+1.0.0-alpha.17 / 2017-06-26
+==================
+
+* Using new validate method in template class, which runs
+Template Validation and Validations Array extension checks
+
 1.0.0-alpha.16 / 2017-06-23
 ==================
 
