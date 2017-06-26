@@ -21,7 +21,7 @@ export class AngularTemplate extends TemplateBase {
             throw new Error('Href must be specified to send a POST request using the template');
         }
 
-        this.validationsExtensionCheck();
+        this.validate();
 
         const body = { template: this.json() };
 
@@ -34,7 +34,7 @@ export class AngularTemplate extends TemplateBase {
             throw new Error('Href must be specified to send a request using the template');
         }
 
-        this.validationsExtensionCheck();
+        this.validate();
 
         const body = { template: this.json() };
 
