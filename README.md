@@ -8,10 +8,9 @@ Disclaimer
 This project is under heavy development (alpha state), use it with care.
 Many methods are not implemented. Changes are likely.
 
-This library is not yet compatible with angular!
+The library is not yet a *true* angular library, refer to the [Usage](#Usage)
  
-Usage
----
+### Usage
 
 The library needs to be configured with the proper Http service to work
 For this create a module like this and import it in your root module:
