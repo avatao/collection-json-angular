@@ -8,7 +8,7 @@ Disclaimer
 This project is under heavy development (alpha state), use it with care.
 Many methods are not implemented. Changes are likely.
 
-The library is not yet a *true* angular library, refer to the [Usage](#Usage)
+The library is not yet a *true* angular library, refer to the [Usage](#usage)
  
 ### Usage
 
