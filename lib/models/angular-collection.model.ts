@@ -7,8 +7,7 @@ import {
     TemplateJSON,
 } from 'collection-json-base/interfaces';
 
-import {CollectionBase, LinkStore, QueryStore} from 'collection-json-base/models';
-
+import {CollectionBase, LinkStore, QueryStore, ItemStore} from 'collection-json-base/models';
 import {AngularError} from './angular-error.model';
 import {AngularItem} from './angular-item.model';
 import {AngularLink} from './angular-link.model';
@@ -23,27 +22,27 @@ export class AngularCollection extends CollectionBase {
 
     protected parseLinks(links: LinkJSON[]): void {
 
-        this.links = new LinkStore();
+        this.linkStore = new LinkStore();
 
         for (const link of links) {
-          this.links.add(new AngularLink(link));
+          this.linkStore.add(new AngularLink(link));
         }
     }
 
     protected parseItems(items: ItemJSON[]): void {
 
-        this.items = [];
+        this.itemStore = new ItemStore();
 
         for (const item of items) {
-          this.items.push(new AngularItem(item));
+          this.itemStore.add(new AngularItem(item));
         }
     }
 
     protected parseQueries(queries: QueryJSON[]): void {
-        this.queries = new QueryStore();
+        this.queryStore = new QueryStore();
 
         for (const query of queries) {
-          this.queries.add(new AngularQuery(query));
+          this.queryStore.add(new AngularQuery(query));
         }
     }
 

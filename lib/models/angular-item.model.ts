@@ -12,10 +12,10 @@ export class AngularItem extends ItemBase {
 
     protected parseLinks(links: LinkJSON[]): void {
 
-        this.links = new LinkStore();
+        this.linkStore = new LinkStore();
 
         for (const link of links) {
-          this.links.add(new AngularLink(link));
+          this.linkStore.add(new AngularLink(link));
         }
     }
 
