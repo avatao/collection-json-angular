@@ -1,3 +1,9 @@
+1.0.0-alpha.19 / 2017-06-28
+==================
+
+* Refactored variable names
+* Updated base library
+
 1.0.0-alpha.18 / 2017-06-27
 ==================
 
