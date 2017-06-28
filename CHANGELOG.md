@@ -1,3 +1,9 @@
+1.0.0-alpha.20 / 2017-06-28
+==================
+
+* Observable return values are using the library interface
+
+
 1.0.0-alpha.19 / 2017-06-28
 ==================
 
