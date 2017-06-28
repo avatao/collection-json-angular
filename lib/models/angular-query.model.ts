@@ -1,7 +1,7 @@
 import {QueryJSON} from 'collection-json-base/interfaces';
 import {QueryBase} from 'collection-json-base/models';
 import {Http, RequestOptions, URLSearchParams} from '@angular/http';
-import {CollectionConfigurationManager, DataJSON, DataStore} from 'collection-json-base';
+import {Collection, CollectionConfigurationManager, DataJSON, DataStore} from 'collection-json-base';
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,7 +14,7 @@ export class AngularQuery extends QueryBase {
         super(query);
     }
 
-    public send(params: { name: string, value: string | number | boolean }[] = []): Observable<AngularCollection> {
+    public send(params: { name: string, value: string | number | boolean }[] = []): Observable<Collection> {
         const requestOptions = new RequestOptions();
         const urlParams = new URLSearchParams();
 

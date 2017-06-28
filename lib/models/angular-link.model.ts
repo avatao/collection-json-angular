@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import {AngularCollection} from './angular-collection.model';
+import {Collection} from 'collection-json-base';
 
 export class AngularLink extends LinkBase {
 
@@ -12,7 +13,7 @@ export class AngularLink extends LinkBase {
         super(link);
     }
 
-    public follow(): Observable<AngularCollection> {
+    public follow(): Observable<Collection> {
         return CollectionConfigurationManager.getHttpService<Http>()
             .get(this.href)
             .map((response) => new AngularCollection(response.json().collection));

@@ -3,7 +3,7 @@ import {CollectionConfigurationManager, TemplateBase} from 'collection-json-base
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import {Http} from '@angular/http';
-import {DataJSON, DataStore} from 'collection-json-base';
+import {Collection, DataJSON, DataStore} from 'collection-json-base';
 import {AngularData} from './angular-data.model';
 
 export class AngularTemplate extends TemplateBase {
@@ -15,7 +15,7 @@ export class AngularTemplate extends TemplateBase {
         this.href = href;
     }
 
-    public submit(): Observable<AngularCollection> {
+    public submit(): Observable<Collection> {
 
         if (typeof this.href === 'undefined') {
             throw new Error('Href must be specified to send a POST request using the template');
@@ -28,7 +28,7 @@ export class AngularTemplate extends TemplateBase {
         return CollectionConfigurationManager.getHttpService<Http>().post(this.href, body)
             .map((response) => new AngularCollection(response.json().collection));
     }
-    public update(): Observable<AngularCollection> {
+    public update(): Observable<Collection> {
 
         if (typeof this.href === 'undefined') {
             throw new Error('Href must be specified to send a request using the template');
