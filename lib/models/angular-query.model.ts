@@ -1,4 +1,4 @@
-import {Collection, QueryJSON} from 'collection-json-base/interfaces';
+import {QueryJSON} from 'collection-json-base/interfaces';
 import {QueryBase} from 'collection-json-base/models';
 import {Http, RequestOptions, URLSearchParams} from '@angular/http';
 import {CollectionConfigurationManager, DataJSON, DataStore} from 'collection-json-base';
@@ -14,7 +14,7 @@ export class AngularQuery extends QueryBase {
         super(query);
     }
 
-    public send(params: { name: string, value: string | number | boolean }[] = []): Observable<Collection> {
+    public send(params: { name: string, value: string | number | boolean }[] = []): Observable<AngularCollection> {
         const requestOptions = new RequestOptions();
         const urlParams = new URLSearchParams();
 

@@ -1,4 +1,4 @@
-import {Collection, LinkJSON} from 'collection-json-base/interfaces';
+import {LinkJSON} from 'collection-json-base/interfaces';
 import {LinkBase, CollectionConfigurationManager} from 'collection-json-base/models';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
@@ -12,7 +12,7 @@ export class AngularLink extends LinkBase {
         super(link);
     }
 
-    public follow(): Observable<Collection> {
+    public follow(): Observable<AngularCollection> {
         return CollectionConfigurationManager.getHttpService<Http>()
             .get(this.href)
             .map((response) => new AngularCollection(response.json().collection));
