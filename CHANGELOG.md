@@ -1,3 +1,9 @@
+1.0.0-alpha.26 / 2017-07-03
+==================
+
+* Updated base library
+* Using correct return value types for this implementation
+
 1.0.0-alpha.25 / 2017-07-03
 ==================
 
