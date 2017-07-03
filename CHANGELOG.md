@@ -1,8 +1,12 @@
-1.0.0-alpha.23 / 2017-06-29
+1.0.0-alpha.24 / 2017-07-03
 ==================
 
 * Updated base library
 
+1.0.0-alpha.23 / 2017-06-29
+==================
+
+* Updated base library
 
 1.0.0-alpha.22 / 2017-06-29
 ==================
@@ -18,7 +22,6 @@
 ==================
 
 * Observable return values are using the library interface
-
 
 1.0.0-alpha.19 / 2017-06-28
 ==================
