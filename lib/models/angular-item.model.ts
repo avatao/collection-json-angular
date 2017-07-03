@@ -10,6 +10,14 @@ export class AngularItem extends ItemBase {
         super(item);
     }
 
+    public link(rel: string): AngularLink {
+        return super.link(rel) as AngularLink;
+    }
+
+    public data(name: string): AngularData {
+        return super.data(name) as AngularData;
+    }
+
     protected parseLinks(links: LinkJSON[]): void {
 
         this.linkStore = new LinkStore();

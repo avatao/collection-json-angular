@@ -20,6 +20,14 @@ export class AngularCollection extends CollectionBase {
         super(collection);
     }
 
+    public link(rel: string): AngularLink {
+        return super.link(rel) as AngularLink;
+    }
+
+    public query(rel: string): AngularQuery {
+        return super.query(rel) as AngularQuery;
+    }
+
     protected parseLinks(links: LinkJSON[]): void {
 
         this.linkStore = new LinkStore();
