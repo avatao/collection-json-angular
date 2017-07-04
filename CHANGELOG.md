@@ -1,9 +1,13 @@
+1.0.0-alpha.28 / 2017-07-04
+==================
+
+* AngularLink's follow method now accepts optional query parameters.
+
 1.0.0-alpha.27 / 2017-07-03
 ==================
 
 * Override methods to return proper types, this will
 eliminate the need for casting on the client side
-
 
 1.0.0-alpha.26 / 2017-07-03
 ==================
