@@ -1,3 +1,8 @@
+1.0.0-alpha.29 / 2017-07-06
+==================
+
+* Some methods no longer throw an error see [base library](https://github.com/avatao/collection-json-base/blob/master/CHANGELOG.md#100-beta12--2017-07-06)
+
 1.0.0-alpha.28 / 2017-07-04
 ==================
 
