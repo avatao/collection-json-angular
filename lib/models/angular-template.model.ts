@@ -14,8 +14,12 @@ export class AngularTemplate extends TemplateBase {
         this.href = href;
     }
 
-    public data(name: string): AngularData {
-        return super.data(name) as AngularData;
+    public data(name: string): AngularData | undefined {
+        const data = super.data(name);
+
+        if (typeof data !== 'undefined') {
+            return super.data(name) as AngularData;
+        }
     }
 
     public submit(): Observable<AngularCollection> {

@@ -20,12 +20,20 @@ export class AngularCollection extends CollectionBase {
         super(collection);
     }
 
-    public link(rel: string): AngularLink {
-        return super.link(rel) as AngularLink;
+    public link(rel: string): AngularLink | undefined {
+        const link = super.link(rel);
+
+        if (typeof link !== 'undefined') {
+            return super.link(rel) as AngularLink;
+        }
     }
 
-    public query(rel: string): AngularQuery {
-        return super.query(rel) as AngularQuery;
+    public query(rel: string): AngularQuery | undefined {
+        const query = super.query(rel);
+
+        if (typeof query !== 'undefined') {
+            return super.query(rel) as AngularQuery;
+        }
     }
 
     protected parseLinks(links: LinkJSON[]): void {

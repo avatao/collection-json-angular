@@ -10,12 +10,20 @@ export class AngularItem extends ItemBase {
         super(item);
     }
 
-    public link(rel: string): AngularLink {
-        return super.link(rel) as AngularLink;
+    public link(rel: string): AngularLink | undefined {
+        const link = super.link(rel);
+
+        if (typeof link !== 'undefined') {
+            return super.link(rel) as AngularLink;
+        }
     }
 
-    public data(name: string): AngularData {
-        return super.data(name) as AngularData;
+    public data(name: string): AngularData | undefined {
+        const data = super.data(name);
+
+        if (typeof data !== 'undefined') {
+            return super.data(name) as AngularData;
+        }
     }
 
     protected parseLinks(links: LinkJSON[]): void {

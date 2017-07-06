@@ -22,7 +22,7 @@ export class AngularQuery extends QueryBase {
 
             if (params.length !== 0) {
                 for (const param of params) {
-                    this.dataStore.data(param.name).value = param.value;
+                    this.dataStore.setDataValue(param.name, param.value);
                 }
             }
 
