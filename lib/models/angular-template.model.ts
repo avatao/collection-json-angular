@@ -2,6 +2,7 @@ import {DataJSON, TemplateJSON} from 'collection-json-base/interfaces';
 import {CollectionConfigurationManager, DataStore, TemplateBase} from 'collection-json-base/models';
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
 import {Http} from '@angular/http';
 import {AngularData} from './angular-data.model';
 
@@ -25,10 +26,14 @@ export class AngularTemplate extends TemplateBase {
     public submit(): Observable<AngularCollection> {
 
         if (typeof this.href === 'undefined') {
-            throw new Error('Href must be specified to send a POST request using the template');
+            return Observable.throw(new Error('Href must be specified to send a POST request using the template'));
         }
 
-        this.validate();
+        try {
+            this.validate();
+        } catch (e) {
+            return Observable.throw(e);
+        }
 
         const body = { template: this.json() };
 
@@ -38,10 +43,14 @@ export class AngularTemplate extends TemplateBase {
     public update(): Observable<AngularCollection> {
 
         if (typeof this.href === 'undefined') {
-            throw new Error('Href must be specified to send a request using the template');
+            return Observable.throw(new Error('Href must be specified to send a PUT request using the template'));
         }
 
-        this.validate();
+        try {
+            this.validate();
+        } catch (e) {
+            return Observable.throw(e);
+        }
 
         const body = { template: this.json() };
 
