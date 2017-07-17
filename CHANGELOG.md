@@ -1,3 +1,10 @@
+1.0.0-alpha.30 / 2017-07-17
+==================
+
+* Template submit and send method does not explicitly throw an error
+it returns an Observable.throw() instead -> this will eliminate some boilerplate
+on the client side
+
 1.0.0-alpha.29 / 2017-07-06
 ==================
 
