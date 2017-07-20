@@ -3,6 +3,7 @@ import {CollectionConfigurationManager, TemplateBase} from 'collection-json-base
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/map';
 import {Http} from '@angular/http';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
@@ -42,8 +43,14 @@ export class AngularTemplate extends TemplateBase {
 
         const body = { template: this.json() };
 
-        return CollectionConfigurationManager.getHttpService<Http>().post(this.href, body)
-            .map((response) => new AngularCollection(response.json().collection));
+        return CollectionConfigurationManager.getHttpService<Http>().post(this.href, body).map(
+            (response) => {
+                if (response.json() && response.json().collection) {
+                    return new AngularCollection(response.json().collection);
+                }
+
+                return response.json();
+            });
     }
     public update(): Observable<AngularCollection> {
 
@@ -59,8 +66,14 @@ export class AngularTemplate extends TemplateBase {
 
         const body = { template: this.json() };
 
-        return CollectionConfigurationManager.getHttpService<Http>().put(this.href, body)
-            .map((response) => new AngularCollection(response.json().collection));
+        return CollectionConfigurationManager.getHttpService<Http>().put(this.href, body).map(
+            (response) => {
+                if (response.json() && response.json().collection) {
+                    return new AngularCollection(response.json().collection);
+                }
+
+                return response.json();
+            });
     }
 
     protected parseData(dataArray: DataJSON[]): void {
