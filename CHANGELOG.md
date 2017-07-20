@@ -1,3 +1,9 @@
+1.0.0-alpha.31 / 2017-07-20
+==================
+
+* Created Angular version of the base library store object (DataStore ItemStore etc..)
+* Updated base library
+
 1.0.0-alpha.30 / 2017-07-17
 ==================
 
