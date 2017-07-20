@@ -1,3 +1,9 @@
+1.0.0-alpha.32 / 2017-07-20
+==================
+
+* items method on AngularCollection class returns AngularItemStore object instead
+of ItemStore
+
 1.0.0-alpha.31 / 2017-07-20
 ==================
 
