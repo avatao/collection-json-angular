@@ -1,12 +1,13 @@
 import {QueryJSON} from 'collection-json-base/interfaces';
 import {QueryBase} from 'collection-json-base/models';
 import {Http, RequestOptions, URLSearchParams} from '@angular/http';
-import {CollectionConfigurationManager, DataJSON, DataStore} from 'collection-json-base';
+import {CollectionConfigurationManager, DataJSON} from 'collection-json-base';
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 import {AngularData} from './angular-data.model';
+import {AngularDataStore} from './angular-datastore.model';
 
 export class AngularQuery extends QueryBase {
 
@@ -40,7 +41,7 @@ export class AngularQuery extends QueryBase {
     }
 
     protected parseData(dataArray: DataJSON[]): void {
-        this.dataStore = new DataStore();
+        this.dataStore = new AngularDataStore();
 
         for (const data of dataArray) {
             this.dataStore.add(new AngularData(data));

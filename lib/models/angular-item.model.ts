@@ -1,8 +1,10 @@
 import {ItemJSON, LinkJSON} from 'collection-json-base/interfaces';
-import {ItemBase, LinkStore} from 'collection-json-base/models';
+import {ItemBase} from 'collection-json-base/models';
 import {AngularLink} from './angular-link.model';
-import {DataJSON, DataStore} from 'collection-json-base';
+import {DataJSON} from 'collection-json-base';
 import {AngularData} from './angular-data.model';
+import {AngularDataStore} from './angular-datastore.model';
+import {AngularLinkStore} from './angular-linkstore.model';
 
 export class AngularItem extends ItemBase {
 
@@ -28,7 +30,7 @@ export class AngularItem extends ItemBase {
 
     protected parseLinks(links: LinkJSON[]): void {
 
-        this.linkStore = new LinkStore();
+        this.linkStore = new AngularLinkStore();
 
         for (const link of links) {
           this.linkStore.add(new AngularLink(link));
@@ -36,7 +38,7 @@ export class AngularItem extends ItemBase {
     }
 
     protected parseData(dataArray: DataJSON[]): void {
-        this.dataStore = new DataStore();
+        this.dataStore = new AngularDataStore();
 
         for (const data of dataArray) {
             this.dataStore.add(new AngularData(data));

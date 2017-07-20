@@ -1,10 +1,11 @@
 import {DataJSON, TemplateJSON} from 'collection-json-base/interfaces';
-import {CollectionConfigurationManager, DataStore, TemplateBase} from 'collection-json-base/models';
+import {CollectionConfigurationManager, TemplateBase} from 'collection-json-base/models';
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import {Http} from '@angular/http';
 import {AngularData} from './angular-data.model';
+import {AngularDataStore} from './angular-datastore.model';
 
 export class AngularTemplate extends TemplateBase {
 
@@ -59,7 +60,7 @@ export class AngularTemplate extends TemplateBase {
     }
 
     protected parseData(dataArray: DataJSON[]): void {
-        this.dataStore = new DataStore();
+        this.dataStore = new AngularDataStore();
 
         for (const data of dataArray) {
             this.dataStore.add(new AngularData(data));
