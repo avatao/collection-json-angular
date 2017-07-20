@@ -1,3 +1,8 @@
+1.0.0-alpha.33 / 2017-07-20
+==================
+
+* Implemented getter new getter methods with proper types
+
 1.0.0-alpha.32 / 2017-07-20
 ==================
 
