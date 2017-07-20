@@ -1,3 +1,9 @@
+1.0.0-alpha.36 / 2017-07-20
+==================
+
+* Template actions (submit, update) will not fail when result
+is not a Collection+JSON
+
 1.0.0-alpha.35 / 2017-07-20
 ==================
 

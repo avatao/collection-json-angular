@@ -1,6 +1,6 @@
 {
   "name": "collection-json-angular",
-  "version": "1.0.0-alpha.35",
+  "version": "1.0.0-alpha.36",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
