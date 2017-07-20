@@ -28,21 +28,28 @@ export class AngularItem extends ItemBase {
         }
     }
 
+    public allData(): AngularDataStore {
+        return super.allData() as AngularDataStore;
+    }
+
+    public links(): AngularLinkStore {
+        return super.links() as AngularLinkStore;
+    }
+
     protected parseLinks(links: LinkJSON[]): void {
 
-        this.linkStore = new AngularLinkStore();
+        this._linkStore = new AngularLinkStore();
 
         for (const link of links) {
-          this.linkStore.add(new AngularLink(link));
+          this._linkStore.add(new AngularLink(link));
         }
     }
 
     protected parseData(dataArray: DataJSON[]): void {
-        this.dataStore = new AngularDataStore();
+        this._dataStore = new AngularDataStore();
 
         for (const data of dataArray) {
-            this.dataStore.add(new AngularData(data));
+            this._dataStore.add(new AngularData(data));
         }
     }
-
 }

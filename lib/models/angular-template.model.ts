@@ -24,6 +24,10 @@ export class AngularTemplate extends TemplateBase {
         }
     }
 
+    allData(): AngularDataStore {
+        return super.allData() as AngularDataStore;
+    }
+
     public submit(): Observable<AngularCollection> {
 
         if (typeof this.href === 'undefined') {
@@ -60,10 +64,10 @@ export class AngularTemplate extends TemplateBase {
     }
 
     protected parseData(dataArray: DataJSON[]): void {
-        this.dataStore = new AngularDataStore();
+        this._dataStore = new AngularDataStore();
 
         for (const data of dataArray) {
-            this.dataStore.add(new AngularData(data));
+            this._dataStore.add(new AngularData(data));
         }
     }
 }

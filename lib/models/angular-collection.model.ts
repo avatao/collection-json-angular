@@ -39,41 +39,64 @@ export class AngularCollection extends CollectionBase {
         }
     }
 
+    public template(): AngularTemplate | undefined {
+        const template = super.template();
+        if (typeof template !== 'undefined') {
+            return super.template() as AngularTemplate;
+        }
+    }
+
+    public error(): AngularError | undefined {
+        const error = super.error();
+        if (typeof error !== 'undefined') {
+            return super.template() as AngularError;
+        }
+    }
+
     public items(): AngularItemStore {
         return super.items() as AngularItemStore;
     }
 
+
+    public queries(): AngularQueryStore {
+        return super.queries() as AngularQueryStore;
+    }
+
+    public links(): AngularLinkStore {
+        return super.links() as AngularLinkStore;
+    }
+
     protected parseLinks(links: LinkJSON[]): void {
 
-        this.linkStore = new AngularLinkStore();
+        this._linkStore = new AngularLinkStore();
 
         for (const link of links) {
-          this.linkStore.add(new AngularLink(link));
+          this._linkStore.add(new AngularLink(link));
         }
     }
 
     protected parseItems(items: ItemJSON[]): void {
 
-        this.itemStore = new AngularItemStore();
+        this._itemStore = new AngularItemStore();
 
         for (const item of items) {
-          this.itemStore.add(new AngularItem(item));
+          this._itemStore.add(new AngularItem(item));
         }
     }
 
     protected parseQueries(queries: QueryJSON[]): void {
-        this.queryStore = new AngularQueryStore();
+        this._queryStore = new AngularQueryStore();
 
         for (const query of queries) {
-          this.queryStore.add(new AngularQuery(query));
+          this._queryStore.add(new AngularQuery(query));
         }
     }
 
     protected parseTemplate(template: TemplateJSON): void {
-        this.template = new AngularTemplate(template, this.href);
+        this._template = new AngularTemplate(template, this.href);
     }
 
     protected parseError(error: ErrorJSON): void {
-        this.error = new AngularError(error);
+        this._error = new AngularError(error);
     }
 }

@@ -19,15 +19,15 @@ export class AngularQuery extends QueryBase {
         const requestOptions = new RequestOptions();
         const urlParams = new URLSearchParams();
 
-        if (typeof this.dataStore !== 'undefined') {
+        if (typeof this._dataStore !== 'undefined') {
 
             if (params.length !== 0) {
                 for (const param of params) {
-                    this.dataStore.setDataValue(param.name, param.value);
+                    this._dataStore.setDataValue(param.name, param.value);
                 }
             }
 
-            for (const data of this.dataStore) {
+            for (const data of this._dataStore) {
                 if (typeof data.value !== 'undefined') {
                     urlParams.set(data.name, String(data.value));
                 }
@@ -40,11 +40,15 @@ export class AngularQuery extends QueryBase {
             .map((result) => new AngularCollection(result.json().collection));
     }
 
+    public allData(): AngularDataStore {
+        return super.allData() as AngularDataStore;
+    }
+
     protected parseData(dataArray: DataJSON[]): void {
-        this.dataStore = new AngularDataStore();
+        this._dataStore = new AngularDataStore();
 
         for (const data of dataArray) {
-            this.dataStore.add(new AngularData(data));
+            this._dataStore.add(new AngularData(data));
         }
     }
 }
