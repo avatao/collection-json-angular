@@ -39,6 +39,10 @@ export class AngularCollection extends CollectionBase {
         }
     }
 
+    public items(): AngularItemStore {
+        return super.items() as AngularItemStore;
+    }
+
     protected parseLinks(links: LinkJSON[]): void {
 
         this.linkStore = new AngularLinkStore();
