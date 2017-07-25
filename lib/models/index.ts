@@ -4,4 +4,8 @@ export * from './angular-item.model';
 export * from './angular-link.model';
 export * from './angular-query.model';
 export * from './angular-template.model';
-
+export * from './angular-data.model';
+export * from './angular-datastore.model';
+export * from './angular-itemstore.model';
+export * from './angular-querystore.model';
+export * from './angular-linkstore.model';
