@@ -1,3 +1,8 @@
+1.0.0-alpha.41 / 2017-08-04
+==================
+
+* Fixed error() method in AngularCollection
+
 1.0.0-alpha.40 / 2017-08-04
 ==================
 

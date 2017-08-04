@@ -27,7 +27,7 @@ export class AngularCollection extends CollectionBase {
         const link = super.link(rel);
 
         if (typeof link !== 'undefined') {
-            return super.link(rel) as AngularLink;
+            return link as AngularLink;
         }
     }
 
@@ -35,21 +35,21 @@ export class AngularCollection extends CollectionBase {
         const query = super.query(rel);
 
         if (typeof query !== 'undefined') {
-            return super.query(rel) as AngularQuery;
+            return query as AngularQuery;
         }
     }
 
     public template(): AngularTemplate | undefined {
         const template = super.template();
         if (typeof template !== 'undefined') {
-            return super.template() as AngularTemplate;
+            return template as AngularTemplate;
         }
     }
 
     public error(): AngularError | undefined {
         const error = super.error();
         if (typeof error !== 'undefined') {
-            return super.template() as AngularError;
+            return error as AngularError;
         }
     }
 

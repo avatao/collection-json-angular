@@ -21,7 +21,7 @@ export class AngularTemplate extends TemplateBase {
         const data = super.data(name);
 
         if (typeof data !== 'undefined') {
-            return super.data(name) as AngularData;
+            return data as AngularData;
         }
     }
 

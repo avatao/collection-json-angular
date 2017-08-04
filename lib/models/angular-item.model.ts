@@ -16,7 +16,7 @@ export class AngularItem extends ItemBase {
         const link = super.link(rel);
 
         if (typeof link !== 'undefined') {
-            return super.link(rel) as AngularLink;
+            return link as AngularLink;
         }
     }
 
@@ -24,7 +24,7 @@ export class AngularItem extends ItemBase {
         const data = super.data(name);
 
         if (typeof data !== 'undefined') {
-            return super.data(name) as AngularData;
+            return data as AngularData;
         }
     }
 
