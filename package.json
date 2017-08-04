@@ -1,6 +1,6 @@
 {
   "name": "collection-json-angular",
-  "version": "1.0.0-alpha.39",
+  "version": "1.0.0-alpha.40",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
@@ -42,7 +42,7 @@
     "@angular/core": "^4.2.3",
     "@angular/http": "^4.2.3",
     "@angular/platform-browser": "^4.2.3",
-    "collection-json-base": "^1.0.0-beta.19",
+    "collection-json-base": "^1.0.0-beta.20",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
