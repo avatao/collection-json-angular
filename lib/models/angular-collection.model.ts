@@ -5,6 +5,7 @@ import {
     LinkJSON,
     QueryJSON,
     TemplateJSON,
+    WrappedCollectionJSON
 } from 'collection-json-base/interfaces';
 
 import {CollectionBase} from 'collection-json-base/models';
@@ -19,7 +20,7 @@ import {AngularLinkStore} from './angular-linkstore.model';
 
 export class AngularCollection extends CollectionBase {
 
-    constructor(collection: CollectionJSON) {
+    constructor(collection: CollectionJSON | WrappedCollectionJSON) {
         super(collection);
     }
 
