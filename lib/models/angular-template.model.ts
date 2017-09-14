@@ -49,7 +49,7 @@ export class AngularTemplate extends TemplateBase {
         return CollectionConfigurationManager.getHttpService<HttpClient>().post<WrappedCollectionJSON | any>(urlPathName, body)
             .map(
             (response) => {
-                if (response.collection) {
+                if (response && response.collection) {
                     return new AngularCollection(response);
                 }
                 return response;
@@ -73,7 +73,7 @@ export class AngularTemplate extends TemplateBase {
         return CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON | any>(urlPathName, body)
             .map(
             (response) => {
-                if (response.collection) {
+                if (response && response.collection) {
                     return new AngularCollection(response);
                 }
                 return response;

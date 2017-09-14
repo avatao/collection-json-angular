@@ -1,4 +1,4 @@
-1.0.0-alpha.43 / 2017-09-14
+1.0.0-alpha.44 / 2017-09-14
 ==================
 
 * BREAKING CHANGE: Added support for Angular 5.x and using HttpClient
