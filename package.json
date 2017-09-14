@@ -38,19 +38,18 @@
     "typescript": "~2.3.3"
   },
   "dependencies": {
-    "@angular/common": "^4.2.3",
-    "@angular/core": "^4.2.3",
-    "@angular/http": "^4.2.3",
-    "@angular/platform-browser": "^4.2.3",
-    "collection-json-base": "^1.0.0-beta.21",
+    "@angular/common": "^5.0.0-beta.7",
+    "@angular/core": "^5.0.0-beta.7",
+    "@angular/platform-browser": "^5.0.0-beta.7",
+    "collection-json-base": "^1.0.0-beta.22",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
   "peerDependencies": {
-    "@angular/common": "^4.2.3",
-    "@angular/core": "^4.2.3",
-    "@angular/http": "^4.2.3",
-    "@angular/platform-browser": "^4.2.3",
+    "@angular/common": "^5.0.0-beta.7",
+    "@angular/core": "^5.0.0-beta.7",
+    "@angular/http": "^5.0.0-beta.7",
+    "@angular/platform-browser": "^5.0.0-beta.7",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   }
