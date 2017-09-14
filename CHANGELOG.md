@@ -1,3 +1,8 @@
+1.0.0-alpha.42 / 2017-09-14
+==================
+
+* BREAKING CHANGE: Added support for Angular 5.x and using HttpClient
+
 1.0.0-alpha.41 / 2017-08-04
 ==================
 

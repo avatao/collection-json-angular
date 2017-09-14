@@ -1,13 +1,13 @@
 import {QueryJSON} from 'collection-json-base/interfaces';
 import {QueryBase} from 'collection-json-base/models';
-import {Http, RequestOptions, URLSearchParams} from '@angular/http';
-import {CollectionConfigurationManager, DataJSON} from 'collection-json-base';
+import {CollectionConfigurationManager, DataJSON, WrappedCollectionJSON} from 'collection-json-base';
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 export class AngularQuery extends QueryBase {
 
@@ -16,28 +16,22 @@ export class AngularQuery extends QueryBase {
     }
 
     public send(params: { name: string, value: string | number | boolean }[] = []): Observable<AngularCollection> {
-        const requestOptions = new RequestOptions();
-        const urlParams = new URLSearchParams();
+        let urlParams = new HttpParams();
 
         if (typeof this._dataStore !== 'undefined') {
-
             if (params.length !== 0) {
                 for (const param of params) {
                     this._dataStore.setDataValue(param.name, param.value);
-                }
-            }
-
-            for (const data of this._dataStore) {
-                if (typeof data.value !== 'undefined') {
-                    urlParams.set(data.name, String(data.value));
+                    if (this._dataStore.dataHasValue(param.name)) {
+                        urlParams = urlParams.set(param.name, String(param.value));
+                    }
                 }
             }
         }
 
-        requestOptions.params = urlParams;
-
-        return CollectionConfigurationManager.getHttpService<Http>().get(this.href, requestOptions)
-            .map((result) => new AngularCollection(result.json().collection));
+        return CollectionConfigurationManager.getHttpService<HttpClient>()
+            .get<WrappedCollectionJSON>(this.href, {params: urlParams})
+            .map((collection) => new AngularCollection(collection));
     }
 
     public allData(): AngularDataStore {

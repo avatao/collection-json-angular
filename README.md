@@ -17,22 +17,22 @@ For this create a module like this and import it in your root module:
 
 ```typescript
 import {NgModule} from '@angular/core';
-import {Http, HttpModule} from '@angular/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {CollectionConfigurationManager} from 'collection-json-base/models'
 
 @NgModule({
   declarations: [],
   exports: [],
-  imports: [HttpModule],
+  imports: [HttpClientModule],
   providers: [],
 })
 export class AngularCollectionModule {
   // Set up collection-json-base library with the proper http service
-  constructor(private http: Http) {
+  constructor(private httpClient: HttpClient) {
     try {
-      CollectionConfigurationManager.getHttpService<Http>();
+      CollectionConfigurationManager.getHttpService<HttpClient>();
     } catch (e) {
-      CollectionConfigurationManager.setHttpService<Http>(this.http);
+      CollectionConfigurationManager.setHttpService<HttpClient>(this.httpClient);
     }
   }
 }

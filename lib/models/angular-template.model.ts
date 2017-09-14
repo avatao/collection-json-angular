@@ -4,9 +4,11 @@ import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
-import {Http} from '@angular/http';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
+import {HttpClient} from '@angular/common/http';
+import * as URL from 'url-parse';
+import {WrappedCollectionJSON} from 'collection-json-base';
 
 export class AngularTemplate extends TemplateBase {
 
@@ -42,14 +44,15 @@ export class AngularTemplate extends TemplateBase {
         }
 
         const body = { template: this.json() };
+        const urlPathName = new URL(this.href).pathname;
 
-        return CollectionConfigurationManager.getHttpService<Http>().post(this.href, body).map(
+        return CollectionConfigurationManager.getHttpService<HttpClient>().post<WrappedCollectionJSON | any>(urlPathName, body)
+            .map(
             (response) => {
-                if (response.json() && response.json().collection) {
-                    return new AngularCollection(response.json().collection);
+                if (response.collection) {
+                    return new AngularCollection(response);
                 }
-
-                return response.json();
+                return response;
             });
     }
     public update(): Observable<AngularCollection> {
@@ -65,14 +68,15 @@ export class AngularTemplate extends TemplateBase {
         }
 
         const body = { template: this.json() };
+        const urlPathName = new URL(this.href).pathname;
 
-        return CollectionConfigurationManager.getHttpService<Http>().put(this.href, body).map(
+        return CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON | any>(urlPathName, body)
+            .map(
             (response) => {
-                if (response.json() && response.json().collection) {
-                    return new AngularCollection(response.json().collection);
+                if (response.collection) {
+                    return new AngularCollection(response);
                 }
-
-                return response.json();
+                return response;
             });
     }
 
