@@ -50,18 +50,43 @@ import {WrappedCollectionJSON} from 'collection-json-base';
 )
 ```
 
-Follow a link (request the collection it points to):
+Follow a link (request the collection it points to), the link of a collection or item can be accessed
+using its rel property:
 
 ```typescript
 const collection = new AngularCollection(someCollection);
 const optionalParameters = new HttpParams();
 
-collection.link('link_prompt').follow(optionalParamateres).subscribe(
+collection.link('link_rel').follow(optionalParamateres).subscribe(
     (requestedCollection: AngularCollection) => {
         // You can use the received requestedCollection which is already an AngularCollection type.
     }
 );
 ```
 
+Get the items of a collection:
 
+```typescript
+const collection = new AngularCollection(someCollection);
+let item: AngularItem;
+let itemStore: AngularItemStore
 
+try {
+    itemStore = collection.items() // Throws an error if there are no items on the collection
+} catch (e) {
+    console.error(e.message);
+}
+
+// Let's assume that the collection has items from now on
+
+try {
+    item = collection.items().one(); // Returns only one item, throws an error if there are more than one
+} catch (e) {
+    console.error(e.message);
+}
+
+item = collection.items().first(); // Returns the first item or undefined
+
+// Returns all of the items on the collection in an AngularItem array.
+let items: AngularItem[] = collection.items().all() 
+```
