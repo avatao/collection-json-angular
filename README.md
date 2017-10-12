@@ -69,10 +69,10 @@ Get the items of a collection:
 ```typescript
 const collection = new AngularCollection(someCollection);
 let item: AngularItem;
-let itemStore: AngularItemStore
+let itemStore: AngularItemStore;
 
 try {
-    itemStore = collection.items() // Throws an error if there are no items on the collection
+    itemStore = collection.items(); // Throws an error if there are no items on the collection
 } catch (e) {
     console.error(e.message);
 }
@@ -88,5 +88,51 @@ try {
 item = collection.items().first(); // Returns the first item or undefined
 
 // Returns all of the items on the collection in an AngularItem array.
-let items: AngularItem[] = collection.items().all() 
+let items: AngularItem[] = collection.items().all(); 
+```
+
+Prepare and send a template:
+
+```typescript
+const collection = new AngularCollection(someCollection);
+const template = collection.template();
+
+// Setting a property
+template.set("propertyName", "propertyValue");
+
+// Setting multiple properties using a JavaScript object
+template.setWithDataObject(
+    {
+        "propertyName1" : "propertyValue1",
+        "propertyName2" : "propertyValue2",
+    }
+);
+
+// Send a POST request
+template.submit().subscribe(
+    (result: AngularCollection) => {
+        // This might be empty, depends on the backend
+    },
+    (error) => {
+        if (error instanceof Error) {
+           // Validation error
+        } else {
+           // Server error
+        }
+    }
+);
+
+// Send a PUT request
+template.update().subscribe(
+    (result: AngularCollection) => {
+        // This might be empty, depends on the backend
+    },
+    (error) => {
+        if (error instanceof Error) {
+           // Validation error
+        } else {
+           // Server error
+        }
+    }
+);
 ```
