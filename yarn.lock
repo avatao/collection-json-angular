@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@angular/common@^5.0.0-rc.0":
-  version "5.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.0.0-rc.0.tgz#ce79c7bf7d8683534d25f3e6c2a04088e9892cb8"
+"@angular/common@^5.0.0-rc.2":
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@angular/common/-/common-5.0.0-rc.2.tgz#6366c015ff1e633d92f58d58d452b3ba72707bcd"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/core@^5.0.0-rc.0":
-  version "5.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.0.0-rc.0.tgz#08ed3c2bc2a917a472d6c751fa9914655d1dcb96"
+"@angular/core@^5.0.0-rc.2":
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-5.0.0-rc.2.tgz#4f5b431b15744f42f0b76728af2d31487124bc76"
   dependencies:
     tslib "^1.7.1"
 
-"@angular/platform-browser@^5.0.0-rc.0":
-  version "5.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.0.0-rc.0.tgz#0a4073bee6ef3d61cf81c849fe96fb1a3af4f4a2"
+"@angular/platform-browser@^5.0.0-rc.2":
+  version "5.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.0.0-rc.2.tgz#9526fcd98919717a87cf2cb929a42b64699aba90"
   dependencies:
     tslib "^1.7.1"
 
