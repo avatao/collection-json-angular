@@ -5,7 +5,7 @@ Collection+JSON Angular Implementation
 Disclaimer
 ---
 
-This project is under heavy development (alpha state), use it with care. Changes are likely.
+This project is under development (beta state), use it with care. API changes might occur.
 
 The library is not yet a *"true"* angular library, refer to the [Usage](#usage)
  

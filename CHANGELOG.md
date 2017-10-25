@@ -1,3 +1,9 @@
+1.0.0-beta.0 / 2017-10-04
+==================
+
+* Upgraded to Angular 5.0.0-rc.5
+* First beta version, API is finalizing.
+
 1.0.0-alpha.47 / 2017-10-04
 ==================
 
