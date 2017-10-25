@@ -1,6 +1,6 @@
 {
   "name": "collection-json-angular",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
@@ -35,7 +35,7 @@
     "copyfiles": "^1.2.0",
     "rimraf": "^2.6.1",
     "tslint": "^5.4.3",
-    "typescript": "~2.4.0",
+    "typescript": "~2.5.3",
     "url-parse": "^1.1.9",
     "@angular/common": "^5.0.0-rc.5",
     "@angular/core": "^5.0.0-rc.5",

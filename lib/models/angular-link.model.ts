@@ -13,8 +13,8 @@ export class AngularLink extends LinkBase {
     }
 
     public follow(params?: HttpParams): Observable<AngularCollection> {
-        return CollectionConfigurationManager.getHttpService<HttpClient>()
+        return (CollectionConfigurationManager.getHttpService<HttpClient>()
             .get<WrappedCollectionJSON>(this.href, {params: params})
-            .map((collection) => new AngularCollection(collection));
+            .map((collection) => new AngularCollection(collection)) as Observable<AngularCollection>);
     }
 }

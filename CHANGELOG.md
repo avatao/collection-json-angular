@@ -1,3 +1,9 @@
+1.0.0-beta.2 / 2017-10-25
+==================
+
+* Upgraded TypeScript to 2.5.x
+* Fixed return value types
+
 1.0.0-beta.1 / 2017-10-25
 ==================
 

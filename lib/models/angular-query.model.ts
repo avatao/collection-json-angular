@@ -29,9 +29,9 @@ export class AngularQuery extends QueryBase {
             }
         }
 
-        return CollectionConfigurationManager.getHttpService<HttpClient>()
+        return (CollectionConfigurationManager.getHttpService<HttpClient>()
             .get<WrappedCollectionJSON>(this.href, {params: urlParams})
-            .map((collection) => new AngularCollection(collection));
+            .map((collection) => new AngularCollection(collection)) as Observable<AngularCollection>);
     }
 
     public allData(): AngularDataStore {
