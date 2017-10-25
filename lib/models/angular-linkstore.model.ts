@@ -7,7 +7,7 @@ export class AngularLinkStore extends LinkStore {
     }
 
     link(rel: string): AngularLink | undefined {
-        return super.link(rel);
+        return super.link(rel) as (AngularLink | undefined);
     }
 
     [Symbol.iterator](): IterableIterator<AngularLink> {

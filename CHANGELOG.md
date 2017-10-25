@@ -1,4 +1,10 @@
-1.0.0-beta.0 / 2017-10-04
+1.0.0-beta.1 / 2017-10-25
+==================
+
+* Upgraded TypeScript to 2.4.x
+* Removed unnecessary packages from dependency
+
+1.0.0-beta.0 / 2017-10-25
 ==================
 
 * Upgraded to Angular 5.0.0-rc.5

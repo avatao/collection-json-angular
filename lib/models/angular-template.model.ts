@@ -46,14 +46,14 @@ export class AngularTemplate extends TemplateBase {
         const body = { template: this.json() };
         const urlPathName = new URL(this.href).pathname;
 
-        return CollectionConfigurationManager.getHttpService<HttpClient>().post<WrappedCollectionJSON>(urlPathName, body)
+        return (CollectionConfigurationManager.getHttpService<HttpClient>().post<WrappedCollectionJSON>(urlPathName, body)
             .map(
             (response) => {
                 if (response && response.collection) {
                     return new AngularCollection(response);
                 }
                 return response;
-            });
+            }) as Observable<AngularCollection>);
     }
     public update(): Observable<AngularCollection> {
 
@@ -70,14 +70,14 @@ export class AngularTemplate extends TemplateBase {
         const body = { template: this.json() };
         const urlPathName = new URL(this.href).pathname;
 
-        return CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON>(urlPathName, body)
+        return (CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON>(urlPathName, body)
             .map(
             (response) => {
                 if (response && response.collection) {
                     return new AngularCollection(response);
                 }
                 return response;
-            });
+            }) as Observable<AngularCollection>);
     }
 
     protected parseData(dataArray: DataJSON[]): void {
