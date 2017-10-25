@@ -1,6 +1,6 @@
 {
   "name": "collection-json-angular",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.7",
   "main": "index.js",
   "types": "index.d.ts",
   "description": "Implementation of the collection-json.ts library for Angular",
@@ -36,21 +36,19 @@
     "rimraf": "^2.6.1",
     "tslint": "^5.4.3",
     "typescript": "~2.5.3",
-    "url-parse": "^1.1.9",
     "@angular/common": "^5.0.0-rc.5",
     "@angular/core": "^5.0.0-rc.5",
-    "@angular/http": "^5.0.0-rc.5",
     "@angular/platform-browser": "^5.0.0-rc.5",
-    "rxjs": "^5.5.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "url-parse": "^1.1.9"
   },
   "dependencies": {
-    "collection-json-base": "1.0.0-beta.24"
+    "collection-json-base": "1.0.0-beta.24",
+    "rxjs": "^5.1.0"
   },
   "peerDependencies": {
     "@angular/common": "^5.0.0-rc.5",
     "@angular/core": "^5.0.0-rc.5",
-    "@angular/http": "^5.0.0-rc.5",
     "@angular/platform-browser": "^5.0.0-rc.5",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"

@@ -14,12 +14,6 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/http@^5.0.0-rc.5":
-  version "5.0.0-rc.5"
-  resolved "https://registry.yarnpkg.com/@angular/http/-/http-5.0.0-rc.5.tgz#23c8399507e2ea7a3d8937bfff0d31767bf9ced1"
-  dependencies:
-    tslib "^1.7.1"
-
 "@angular/platform-browser@^5.0.0-rc.5":
   version "5.0.0-rc.5"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-5.0.0-rc.5.tgz#063ddee8809c7eec7d2d9207ba033658f55f22dc"
@@ -266,9 +260,9 @@ rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-rxjs@^5.5.0:
-  version "5.5.1"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.1.tgz#ef980a6ad7438c74e3b0f0d1e6f1493e385997fd"
+rxjs@^5.1.0:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.2.tgz#28d403f0071121967f18ad665563255d54236ac3"
   dependencies:
     symbol-observable "^1.0.1"
 

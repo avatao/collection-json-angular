@@ -1,3 +1,9 @@
+1.0.0-beta.7 / 2017-10-25
+==================
+
+* Skipped some versions (broken packages)
+* RxJS had to be moved to dependency, to prevent compilation error (needs investigation)
+
 1.0.0-beta.3 / 2017-10-25
 ==================
 
