@@ -1,3 +1,9 @@
+1.0.0-beta.8 / 2017-11-03
+==================
+
+* Angular 5 is released, using it as a peer dependency
+* Change typescript version to be compliant with Angular 5
+
 1.0.0-beta.7 / 2017-10-25
 ==================
 
