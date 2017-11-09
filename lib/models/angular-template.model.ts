@@ -6,7 +6,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import * as URL from 'url-parse';
 import {WrappedCollectionJSON} from 'collection-json-base';
 
@@ -37,6 +37,8 @@ export class AngularTemplate extends TemplateBase {
             return Observable.throw(new Error('Href must be specified to send a POST request using the template'));
         }
 
+        const params: HttpParams = this.parseHref(this.href);
+
         try {
             this.validate();
         } catch (e) {
@@ -46,7 +48,8 @@ export class AngularTemplate extends TemplateBase {
         const body = { template: this.json() };
         const urlPathName = new URL(this.href).pathname;
 
-        return (CollectionConfigurationManager.getHttpService<HttpClient>().post<WrappedCollectionJSON>(urlPathName, body)
+        return (CollectionConfigurationManager.getHttpService<HttpClient>()
+            .post<WrappedCollectionJSON>(urlPathName, body, {params: params})
             .map(
             (response) => {
                 if (response && response.collection) {
@@ -61,6 +64,8 @@ export class AngularTemplate extends TemplateBase {
             return Observable.throw(new Error('Href must be specified to send a PUT request using the template'));
         }
 
+        const params: HttpParams = this.parseHref(this.href);
+
         try {
             this.validate();
         } catch (e) {
@@ -70,7 +75,7 @@ export class AngularTemplate extends TemplateBase {
         const body = { template: this.json() };
         const urlPathName = new URL(this.href).pathname;
 
-        return (CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON>(urlPathName, body)
+        return (CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON>(urlPathName, body, {params: params})
             .map(
             (response) => {
                 if (response && response.collection) {
@@ -86,5 +91,16 @@ export class AngularTemplate extends TemplateBase {
         for (const data of dataArray) {
             this._dataStore.add(new AngularData(data));
         }
+    }
+
+    private parseHref(href: string): HttpParams {
+        const parsedHref = new URL(href, true);
+        let params: HttpParams = new HttpParams();
+        for (const queryParam in parsedHref.query) {
+            if (parsedHref.query.hasOwnProperty(queryParam)) {
+                params = params.set(queryParam, parsedHref.query[queryParam]);
+            }
+        }
+        return params;
     }
 }
