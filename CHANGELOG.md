@@ -1,3 +1,8 @@
+1.0.0-beta.11 / 2017-11-13
+==================
+
+* Fixed query not using params in the datastore
+
 1.0.0-beta.10 / 2017-11-09
 ==================
 
