@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/avatao/collection-json-angular/badge.svg)](https://snyk.io/test/github/avatao/collection-json-angular)
+
 Collection+JSON Angular Implementation
 ======================================
 
