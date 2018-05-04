@@ -1,7 +1,7 @@
 import {DataJSON, TemplateJSON} from 'collection-json-base/interfaces';
 import {CollectionConfigurationManager, TemplateBase} from 'collection-json-base/models';
 import {AngularCollection} from './angular-collection.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import {AngularData} from './angular-data.model';
@@ -9,6 +9,7 @@ import {AngularDataStore} from './angular-datastore.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import * as URL from 'url-parse';
 import {WrappedCollectionJSON} from 'collection-json-base';
+import {map} from 'rxjs/operators';
 
 export class AngularTemplate extends TemplateBase {
 
@@ -50,13 +51,13 @@ export class AngularTemplate extends TemplateBase {
 
         return (CollectionConfigurationManager.getHttpService<HttpClient>()
             .post<WrappedCollectionJSON>(urlPathName, body, {params: params})
-            .map(
-            (response) => {
-                if (response && response.collection) {
-                    return new AngularCollection(response);
-                }
-                return response;
-            }) as Observable<AngularCollection>);
+            .pipe(
+                map((response) => {
+                    if (response && response.collection) {
+                        return new AngularCollection(response);
+                    }
+                    return response;
+            })) as Observable<AngularCollection>);
     }
     public update(): Observable<AngularCollection> {
 
@@ -76,13 +77,13 @@ export class AngularTemplate extends TemplateBase {
         const urlPathName = new URL(this.href).pathname;
 
         return (CollectionConfigurationManager.getHttpService<HttpClient>().put<WrappedCollectionJSON>(urlPathName, body, {params: params})
-            .map(
-            (response) => {
-                if (response && response.collection) {
-                    return new AngularCollection(response);
-                }
-                return response;
-            }) as Observable<AngularCollection>);
+            .pipe(
+                map((response) => {
+                    if (response && response.collection) {
+                        return new AngularCollection(response);
+                    }
+                    return response;
+            })) as Observable<AngularCollection>);
     }
 
     protected parseData(dataArray: DataJSON[]): void {

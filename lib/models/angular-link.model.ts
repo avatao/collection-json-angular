@@ -1,10 +1,9 @@
 import {LinkJSON, WrappedCollectionJSON} from 'collection-json-base/interfaces';
 import {LinkBase, CollectionConfigurationManager} from 'collection-json-base/models';
-import {Observable} from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
+import {Observable} from 'rxjs';
 import {AngularCollection} from './angular-collection.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 export class AngularLink extends LinkBase {
 
@@ -15,6 +14,8 @@ export class AngularLink extends LinkBase {
     public follow(params?: HttpParams): Observable<AngularCollection> {
         return (CollectionConfigurationManager.getHttpService<HttpClient>()
             .get<WrappedCollectionJSON>(this.href, {params: params})
-            .map((collection) => new AngularCollection(collection)) as Observable<AngularCollection>);
+            .pipe(
+                map((collection) => new AngularCollection(collection))) as Observable<AngularCollection>
+        );
     }
 }

@@ -2,12 +2,13 @@ import {QueryJSON} from 'collection-json-base/interfaces';
 import {QueryBase} from 'collection-json-base/models';
 import {CollectionConfigurationManager, DataJSON, WrappedCollectionJSON} from 'collection-json-base';
 import {AngularCollection} from './angular-collection.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 export class AngularQuery extends QueryBase {
 
@@ -33,7 +34,7 @@ export class AngularQuery extends QueryBase {
 
         return (CollectionConfigurationManager.getHttpService<HttpClient>()
             .get<WrappedCollectionJSON>(this.href, {params: urlParams})
-            .map((collection) => new AngularCollection(collection)) as Observable<AngularCollection>);
+            .pipe(map((collection) => new AngularCollection(collection))) as Observable<AngularCollection>);
     }
 
     public allData(): AngularDataStore {
