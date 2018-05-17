@@ -1,9 +1,9 @@
 import {LinkJSON, WrappedCollectionJSON} from 'collection-json-base/interfaces';
-import {LinkBase, CollectionConfigurationManager} from 'collection-json-base/models';
+import {CollectionConfigurationManager, LinkBase} from 'collection-json-base/models';
 import {Observable} from 'rxjs';
 import {AngularCollection} from './angular-collection.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
 export class AngularLink extends LinkBase {
 

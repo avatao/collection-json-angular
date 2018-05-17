@@ -1,9 +1,7 @@
 import {DataJSON, TemplateJSON} from 'collection-json-base/interfaces';
 import {CollectionConfigurationManager, TemplateBase} from 'collection-json-base/models';
 import {AngularCollection} from './angular-collection.model';
-import {Observable} from 'rxjs';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/map';
+import {Observable, throwError} from 'rxjs';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
@@ -35,7 +33,7 @@ export class AngularTemplate extends TemplateBase {
     public submit(): Observable<AngularCollection> {
 
         if (typeof this.href === 'undefined') {
-            return Observable.throw(new Error('Href must be specified to send a POST request using the template'));
+            return throwError(new Error('Href must be specified to send a POST request using the template'));
         }
 
         const params: HttpParams = this.parseHref(this.href);
@@ -43,7 +41,7 @@ export class AngularTemplate extends TemplateBase {
         try {
             this.validate();
         } catch (e) {
-            return Observable.throw(e);
+            return throwError(e);
         }
 
         const body = { template: this.json() };
@@ -62,7 +60,7 @@ export class AngularTemplate extends TemplateBase {
     public update(): Observable<AngularCollection> {
 
         if (typeof this.href === 'undefined') {
-            return Observable.throw(new Error('Href must be specified to send a PUT request using the template'));
+            return throwError(new Error('Href must be specified to send a PUT request using the template'));
         }
 
         const params: HttpParams = this.parseHref(this.href);
@@ -70,7 +68,7 @@ export class AngularTemplate extends TemplateBase {
         try {
             this.validate();
         } catch (e) {
-            return Observable.throw(e);
+            return throwError(e);
         }
 
         const body = { template: this.json() };

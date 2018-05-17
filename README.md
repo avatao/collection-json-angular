@@ -47,9 +47,9 @@ The AngularCollection constructor can accept either a WrappedCollectionJSON or a
 ```typescript
 import {WrappedCollectionJSON} from 'collection-json-base';
 
- this.httpClient.get<WrappedCollectionJSON>('http://example.com').map(
+ this.httpClient.get<WrappedCollectionJSON>('http://example.com').pipe(map(
     (wrappedCollectionJson) => new AngularCollection(wrappedCollectionJson)
-)
+))
 ```
 
 Follow a link (request the collection it points to), the link of a collection or item can be accessed

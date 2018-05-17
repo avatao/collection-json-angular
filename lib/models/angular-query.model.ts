@@ -3,8 +3,6 @@ import {QueryBase} from 'collection-json-base/models';
 import {CollectionConfigurationManager, DataJSON, WrappedCollectionJSON} from 'collection-json-base';
 import {AngularCollection} from './angular-collection.model';
 import {Observable} from 'rxjs';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/observable/of';
 import {AngularData} from './angular-data.model';
 import {AngularDataStore} from './angular-datastore.model';
 import {HttpClient, HttpParams} from '@angular/common/http';
