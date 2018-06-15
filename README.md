@@ -13,8 +13,8 @@ The library is not yet a *"true"* angular library, refer to the [Usage](#usage)
  
 ### Usage
 
-The library needs to be configured with the proper HttpClient service to work
-For this create a module like this and import it in your root module:
+The library needs to be configured with the proper HttpClient service to work.
+To achive this create a module and import it in your root module:
 
 ```typescript
 import {NgModule} from '@angular/core';
